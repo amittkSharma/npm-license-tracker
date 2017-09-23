@@ -1,6 +1,6 @@
 {
   "name": "npm-license-tracker",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "Module to track all npm dependencies and their corrosponding licenses.",
   "main": "index.js",
   "scripts": {
@@ -30,5 +30,9 @@
     "yargs": "^3.31.0",
     "treeify": "~1.0.1",
     "colors": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amittkSharma/npm-license-tracker.git"
   }
 }
