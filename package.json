@@ -1,6 +1,6 @@
 {
   "name": "npm-license-tracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Module to track all npm dependencies and their corrosponding licenses.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,17 @@
     "tracker",
     "npm",
     "license",
-    "OSS"
+    "OSS",
+    "crawler",
+    "license-csv",
+    "license-json",
+    "npm licenses",
+    "licenses audit",
+    "npm-license-csv",
+    "npm-license-json",
+    "npm-license-tracker",
+    "npm crawler",
+    "npm license"
   ],
   "author": "AMIT SHARMA",
   "license": "MIT",
