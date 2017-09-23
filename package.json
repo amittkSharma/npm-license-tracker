@@ -1,0 +1,34 @@
+{
+  "name": "npm-license-tracker",
+  "version": "0.0.1",
+  "description": "Module to track all npm dependencies and their corrosponding licenses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cls && node bin/index.js"
+  },
+  "bin": {
+    "npm-tracker": "bin/npm-tracker.js"
+  },
+  "preferGlobal": true,
+  "keywords": [
+    "Npm",
+    "license",
+    "tracker",
+    "npm",
+    "license",
+    "OSS"
+  ],
+  "author": "AMIT SHARMA",
+  "license": "MIT",
+  "dependencies": {
+    "license-checker": "^4.2.0",
+    "copy-files": "^0.1.0",
+    "fs-extra": "^0.26.3",
+    "json2csv": "^3.6.3",
+    "read-package-json": "^2.0.2",
+    "yargs": "^3.31.0",
+    "treeify": "~1.0.1",
+    "colors": "^1.1.2"
+  }
+}
