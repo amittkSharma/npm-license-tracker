@@ -25,3 +25,8 @@ npm install -g npm-license-tracker
 - On command line, execute the command: npm-tracker "Path to package.json"
 - To generate CSV, execute the command: npm-tracker "Path to package.json" true || false (<em>default value is false </em>)
 
+## Example of license JSON so produced by app
+![Alt text](https://github.com/amittkSharma/npm-license-tracker/blob/master/images/license_json.PNG?raw=true "npm packages meta information")
+
+
+
