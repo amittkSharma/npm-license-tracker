@@ -27,19 +27,23 @@ npm install -g npm-license-tracker
 
 ## Api Usage
 
+```
 npm install npm-license-tracker
+```
 
+```js
 var licenseChecker = require('npm-license-tracker/src');
 var options = {
   path: 'C:\\Workspace\\DEMO_PROJECT',
   isExcel: true
 }
 licenseChecker.run(options)
+```
 
-| API				        | Description			|   
-| ----------------- | ----------------- 
-| path      		  	| Path to package.json in the project |
-| isExcel           | For generating CSV file, default value is false |
+| API				       | Type       | Description			                                |   
+| -----------------|------------| ------------------------------------------------| 
+| path      		   | string     | Path to package.json in the project             |
+| isExcel          | boolean    | For generating CSV file, default value is false |
 
 ## Example of license JSON so produced by app
 ![Alt text](https://github.com/amittkSharma/npm-license-tracker/blob/master/images/license_json.PNG?raw=true "npm packages meta information")
