@@ -1,5 +1,4 @@
 var licenseChecker = require('license-checker');
-const treeify = require('treeify');
 const fs = require('fs-extra');
 const copy = require('copy-files');
 const colors = require('colors');
