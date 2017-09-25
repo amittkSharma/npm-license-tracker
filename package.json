@@ -1,6 +1,6 @@
 {
   "name": "npm-license-tracker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Module to track all npm dependencies and their corrosponding licenses.",
   "main": "index.js",
   "scripts": {
