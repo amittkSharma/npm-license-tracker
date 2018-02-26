@@ -1,4 +1,8 @@
 # npm-license-tracker
+
+[![](https://img.shields.io/npm/v/npm-license-tracker.svg)](https://www.npmjs.com/package/npm-license-tracker)
+[![](https://img.shields.io/npm/dm/npm-license-tracker.svg)](https://www.npmjs.com/package/npm-license-tracker)
+
 npm-license-tracker will track all the npm dependencies and their corrosponding licenses.
 The module will generate the JSON file with all meta information about npm packages and copy corrosponding license files in a directory named "npm_licenses". This new folder will be created under the same project directory.
 
