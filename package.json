@@ -1,6 +1,6 @@
 {
   "name": "npm-license-tracker",
-  "version": "1.0.5",
+  "version": "1.1.5",
   "description": "Module to track all npm dependencies and their corrosponding licenses.",
   "main": "index.js",
   "scripts": {
@@ -32,13 +32,14 @@
   "author": "AMIT SHARMA",
   "license": "MIT",
   "dependencies": {
-    "license-checker": "^4.2.0",
+    "colors": "^1.1.2",
+    "commander": "2.15.0",
     "copy-files": "^0.1.0",
     "fs-extra": "^0.26.3",
     "json2csv": "^3.6.3",
+    "license-checker": "^4.2.0",
     "read-package-json": "^2.0.2",
-    "yargs": "^3.31.0",
-    "colors": "^1.1.2"
+    "yargs": "^3.31.0"
   },
   "repository": {
     "type": "git",
