@@ -59,3 +59,7 @@ licenseChecker.run(options)
 ```
 npm-license-tracker --help
 ```
+
+## License
+
+MIT
