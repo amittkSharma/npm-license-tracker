@@ -55,7 +55,7 @@ getExtendedJson = function(path, json, packages) {
       'programming language': 'JavaScript',
       'package version': info.version,
       'publisher contact information': info.email ? info.email : repoName,
-      'transitive': (packages.filter(pkg => pkg.label === x).length > 0) ? true : false
+      'dependencyType': (packages.filter(pkg => pkg.label === x).length > 0) ? 'immediate' : 'transitive'
     }
   })
   var packages = {}
