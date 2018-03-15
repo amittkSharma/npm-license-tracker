@@ -11,11 +11,13 @@ The module will generate the JSON file with all meta information about npm packa
   <li>Creation of JSON file with meta information about licenses</li>
   <li>Copying license files</li>
   <li>Creation of CSV file with meta information for Audit purpose</li>
+  <li>Find Immediate and transitive dependencies</li>
 </ul>
 
 ## Updates
 | Date				      | Author			      | Description							|
 | ----------------- | ----------------- | ----------- |
+| 2018-03-15		  	| AmittK		        | Module capable to find immediate or transitive dependencies. |
 | 2017-09-24		  	| AmittK		        | Module to track npm dependencies with all meta information and license files. |
 
 ## Installing via Npm
@@ -44,11 +46,16 @@ var options = {
 licenseChecker.run(options)
 ```
 
-| API				       | Type       | Description			                                |   
-| -----------------|------------| ------------------------------------------------| 
+| API				       | Type       | Description			                                |
+| -----------------|------------| ------------------------------------------------|
 | path      		   | string     | Path to package.json in the project             |
 | isExcel          | boolean    | For generating CSV file, default value is false |
 
 ## Example of license JSON so produced by app
 ![Alt text](https://github.com/amittkSharma/npm-license-tracker/blob/master/images/license_json.PNG?raw=true "npm packages meta information")
 
+## Command line help
+
+```
+npm-license-tracker --help
+```
