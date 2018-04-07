@@ -7,7 +7,7 @@ process.on('uncaughtException', function(err) {
   console.error('Caught exception:\n', err.stack);
 });
 
-var npmTracker = require('../src/index.js');
+var npmTracker = require('../dist/index.js');
 var path = process.argv[2];
 var isExcel = process.argv[3] ? process.argv[3] : false;
 var parameter = { path, isExcel }

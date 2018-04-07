@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cls && node bin/index.js"
+    "start": "cls && node bin/index.js",
+    "lint": "tslint --exclude 'node_modules/**/*.ts' '**/*.ts'",
+    "build": "cls && tsc"
   },
   "bin": {
     "npm-tracker": "bin/npm-tracker.js"
@@ -39,7 +41,11 @@
     "json2csv": "^3.6.3",
     "license-checker": "^4.2.0",
     "read-package-json": "2.0.13",
+    "tslint-checker": "2.0.2",
     "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "typescript": "2.6.2"
   },
   "repository": {
     "type": "git",
