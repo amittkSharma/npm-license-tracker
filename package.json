@@ -32,14 +32,14 @@
   "author": "AMIT SHARMA",
   "license": "MIT",
   "dependencies": {
-    "colors": "^1.1.2",
-    "commander": "2.15.0",
+    "colors": "^1.3.2",
+    "commander": "2.19.0",
     "copy-files": "^0.1.0",
-    "fs-extra": "^0.26.3",
-    "json2csv": "^3.6.3",
+    "fs-extra": "^7.0.1",
+    "json2csv": "^4.3.0",
     "license-checker": "^4.2.0",
     "read-package-json": "2.0.13",
-    "yargs": "^3.31.0"
+    "yargs": "12.0.2"
   },
   "repository": {
     "type": "git",
