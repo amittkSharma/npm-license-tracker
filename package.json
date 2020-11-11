@@ -1,11 +1,11 @@
 {
   "name": "npm-license-tracker",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Module to track all npm dependencies and their corrosponding licenses.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cls && node bin/index.js"
+    "start": "node bin/index.js"
   },
   "bin": {
     "npm-tracker": "bin/npm-tracker.js"
