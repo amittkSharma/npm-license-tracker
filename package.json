@@ -42,7 +42,7 @@
     "yargs": "16.0.1"
   },
   "devDependencies": {
-    "lodash": "4.17.20"
+    "lodash": "4.17.21"
   },
   "repository": {
     "type": "git",
