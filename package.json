@@ -29,20 +29,20 @@
     "npm crawler",
     "npm license"
   ],
-  "author": "AMIT SHARMA",
+  "author": "AMITT K SHARMA",
   "license": "MIT",
   "dependencies": {
     "colors": "1.4.0",
-    "commander": "6.2.0",
+    "commander": "13.1.0",
     "copy-files": "0.1.0",
-    "fs-extra": "9.0.1",
-    "json2csv": "5.0.4",
+    "fs-extra": "11.3.0",
+    "json2csv": "5.0.7",
     "license-checker": "25.0.1",
-    "read-package-json": "3.0.0",
-    "yargs": "16.0.1"
+    "read-package-json": "7.0.1",
+    "yargs": "17.7.2"
   },
   "devDependencies": {
-    "lodash": "4.17.20"
+    "lodash": "4.17.21"
   },
   "repository": {
     "type": "git",
