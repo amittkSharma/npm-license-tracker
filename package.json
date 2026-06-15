@@ -1,11 +1,12 @@
 {
   "name": "npm-license-tracker",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Module to track all npm dependencies and their corrosponding licenses.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/npm-tracker.js"
+    "start": "node bin/npm-tracker.js",
+    "release": "commit-and-tag-version"
   },
   "bin": {
     "npm-tracker": "bin/npm-tracker.js"
@@ -34,13 +35,14 @@
   "dependencies": {
     "colors": "1.4.0",
     "commander": "13.1.0",
-
     "fs-extra": "11.3.0",
     "json2csv": "5.0.7",
     "license-checker": "25.0.1",
     "read-package-json": "7.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "commit-and-tag-version": "12.7.3"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/amittkSharma/npm-license-tracker.git"
