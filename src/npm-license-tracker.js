@@ -1,6 +1,5 @@
 var licenseChecker = require("license-checker");
 const fs = require("fs-extra");
-const copy = require("copy-files");
 const colors = require("colors");
 const { parse } = require("json2csv");
 
@@ -59,8 +58,8 @@ getExtendedJson = function (path, json, packages) {
       publisher: info.publisher
         ? info.publisher
         : info.repository
-        ? info.repository.split("/").slice(-2, -1)[0]
-        : _noInfoFound,
+          ? info.repository.split("/").slice(-2, -1)[0]
+          : _noInfoFound,
       description: info.description,
       "programming language": "JavaScript",
       "package version": info.version,
@@ -93,7 +92,7 @@ writeJsonFile = function (path, result, packages, isExcelNeeded) {
     const updatedResult = getExtendedJson(path, result, packages);
     const destinationFolder = path + fileOptions.outputFolderName;
     const fullPath = destinationFolder + fileOptions.outputFileName;
-    fs.outputJson(fullPath, updatedResult, (err) => {
+    fs.outputJson(fullPath, updatedResult, null, 2, (err) => {
       if (err) {
         console.log("Error in writing json files::".red + err);
         reject("error in writing the json file");
@@ -150,23 +149,21 @@ copyLicenseFiles = function (destinationFolder, updatedResult) {
       objFiles[key] = packages[x]["license file"];
     }
   });
-  copy(
-    {
-      files: objFiles,
-      dest: destinationFolder,
-    },
-    function (err) {
-      if (!err) {
-        console.log("All licenses files copied successfully.".green);
-        console.log(
-          `Total licenses file copied successfully: ${numCopiedFiles} and failed:${numNoLicenseFiles} :`
-            .green
-        );
-      } else {
-        console.log("Error in copying files", err);
-      }
-    }
-  );
+  Promise.all(
+    Object.entries(objFiles).map(([name, src]) =>
+      fs.copy(src, `${destinationFolder}/${name}`),
+    ),
+  )
+    .then(() => {
+      console.log("All licenses files copied successfully.".green);
+      console.log(
+        `Total licenses file copied successfully: ${numCopiedFiles} and failed:${numNoLicenseFiles} :`
+          .green,
+      );
+    })
+    .catch((err) => {
+      console.log("Error in copying files", err);
+    });
 };
 
 getDependencies = function (pDependencies, pDevDependencies) {
@@ -205,7 +202,7 @@ readModulePackageJson = function (path) {
     if (packageData != undefined) {
       const allDependencies = getDependencies(
         packageData.dependencies,
-        packageData.devDependencies
+        packageData.devDependencies,
       );
       resolve(allDependencies);
     }
