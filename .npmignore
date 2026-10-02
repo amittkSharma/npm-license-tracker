@@ -1,0 +1,16 @@
+# Published package ships only dist/, README, LICENSE, CHANGELOG
+src/
+bin/
+test/
+.codesight/
+.claude/
+.github/
+biome.json
+tsconfig*.json
+*.tsbuildinfo
+coverage/
+npm_licenses/
+.DS_Store
+*.log
+docs/
+verification/
