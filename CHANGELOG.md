@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [4.0.0](https://github.com/amittkSharma/npm-license-tracker/compare/v3.1.0...v4.0.0) (2026-10-05)
+
 ## [3.1.0](https://github.com/amittkSharma/npm-license-tracker/compare/v3.0.2...v3.1.0) (2026-10-05)
 
 

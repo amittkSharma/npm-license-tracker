@@ -1,6 +1,6 @@
 {
   "name": "npm-license-tracker",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Generate a license report for every npm dependency of a project, as JSON, CSV, HTML, Markdown or JUnit. Works with npm, Yarn and pnpm.",
   "keywords": [
     "license",
@@ -65,7 +65,7 @@
     "start": "node dist/bin/npm-tracker.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm run clean && npm run build && npm test && npm run test:dist",
-    "release": "commit-and-tag-version"
+    "release": "commit-and-tag-version --release-as 4.0.0"
   },
   "dependencies": {
     "colors": "1.4.0",
