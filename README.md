@@ -115,7 +115,7 @@ steps:
     condition: succeededOrFailed()
     inputs:
       testResultsFormat: JUnit
-      testResultsFiles: '**/npm_licenses.junit.xml'
+      testResultsFiles: "**/npm_licenses.junit.xml"
       testRunTitle: License audit
 
   - task: PublishPipelineArtifact@1
@@ -131,29 +131,29 @@ next to it.
 
 ## Options
 
-| Option | What it does |
-| --- | --- |
-| `--path <folder>` | The project to scan (the folder with `package.json`). **Required.** |
-| `--format <list>` | Reports to write besides the JSON: `csv`, `html`, `junit`, `markdown`, or `all`. Example: `--format html,csv` |
-| `--outputDir <folder>` | Where to put the results. Default: `npm_licenses` inside the project. |
-| `--production` | Skip devDependencies and anything only they need. |
-| `--failOn <list>` | Exit `1` if a package has one of these licenses, e.g. `"GPL-3.0;AGPL-3.0"`. |
-| `--onlyAllow <list>` | Exit `1` unless every package's license is covered by this list. |
-| `--excludePrivatePackages` | Leave out packages marked `"private": true`. |
-| `--excludePackages <list>` | Leave out packages by full name: `name`, `name@major` or `name@version`, separated by `;`. |
-| `--clarificationsFile <file>` | Tell the tool a license it can't detect (see below). |
-| `--allowIncomplete` | Write the report even if some dependencies could not be read. |
-| `--isExcel`, `--isHtml`, `--isJunit`, `--isMarkdown` | Older spellings of `--format csv`, `html`, `junit` and `markdown`. They still work. |
+| Option                                               | What it does                                                                                                  |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `--path <folder>`                                    | The project to scan (the folder with `package.json`). **Required.**                                           |
+| `--format <list>`                                    | Reports to write besides the JSON: `csv`, `html`, `junit`, `markdown`, or `all`. Example: `--format html,csv` |
+| `--outputDir <folder>`                               | Where to put the results. Default: `npm_licenses` inside the project.                                         |
+| `--production`                                       | Skip devDependencies and anything only they need.                                                             |
+| `--failOn <list>`                                    | Exit `1` if a package has one of these licenses, e.g. `"GPL-3.0;AGPL-3.0"`.                                   |
+| `--onlyAllow <list>`                                 | Exit `1` unless every package's license is covered by this list.                                              |
+| `--excludePrivatePackages`                           | Leave out packages marked `"private": true`.                                                                  |
+| `--excludePackages <list>`                           | Leave out packages by full name: `name`, `name@major` or `name@version`, separated by `;`.                    |
+| `--clarificationsFile <file>`                        | Tell the tool a license it can't detect (see below).                                                          |
+| `--allowIncomplete`                                  | Write the report even if some dependencies could not be read.                                                 |
+| `--isExcel`, `--isHtml`, `--isJunit`, `--isMarkdown` | Older spellings of `--format csv`, `html`, `junit` and `markdown`. They still work.                           |
 
 ## Works with your package manager
 
-| Package manager | Supported |
-| --- | --- |
-| npm | Yes |
-| Yarn classic (1.x) | Yes |
-| Yarn 2 and newer (Berry), `node_modules` or Plug'n'Play | Yes |
-| pnpm, default or `hoisted` | Yes |
-| Bun | Not tested |
+| Package manager                                         | Supported  |
+| ------------------------------------------------------- | ---------- |
+| npm                                                     | Yes        |
+| Yarn classic (1.x)                                      | Yes        |
+| Yarn 2 and newer (Berry), `node_modules` or Plug'n'Play | Yes        |
+| pnpm, default or `hoisted`                              | Yes        |
+| Bun                                                     | Not tested |
 
 You don't need to change any setting. The tool works out how your dependencies were installed by reading files
 (it never runs a package manager), and every report says which package manager and version it found.
@@ -245,19 +245,20 @@ results with an independent check.
 ## Use it from code
 
 ```js
-const { run, LicensePolicyError } = require('npm-license-tracker');
+const { run, LicensePolicyError } = require("npm-license-tracker");
 
 try {
   const { outputFolder } = await run({
-    path: '/path/to/project',
-    formats: ['html', 'markdown'], // or 'all'
+    path: "/path/to/project",
+    formats: ["html", "markdown"], // or 'all'
     production: true,
-    failOn: ['GPL-3.0'],
+    failOn: ["GPL-3.0"],
   });
   console.log(`Reports are in ${outputFolder}`);
 } catch (err) {
   // the reports are written before the policy is enforced, so they exist even now
-  if (err instanceof LicensePolicyError) console.error(err.violations, err.outputFolder);
+  if (err instanceof LicensePolicyError)
+    console.error(err.violations, err.outputFolder);
   else throw err;
 }
 ```
@@ -267,11 +268,7 @@ types are included, and the older `require('npm-license-tracker/src')` still wor
 
 ## More documentation
 
-The [docs folder](https://github.com/amittkSharma/npm-license-tracker/tree/master/docs) has the
-[migration guide](https://github.com/amittkSharma/npm-license-tracker/blob/master/docs/migration-3-to-4.md), how the
-[results were verified](https://github.com/amittkSharma/npm-license-tracker/blob/master/docs/verification.md), the
-[architecture](https://github.com/amittkSharma/npm-license-tracker/blob/master/docs/architecture.md) and the
-[publishing guide](https://github.com/amittkSharma/npm-license-tracker/blob/master/docs/publishing.md).
+[migration guide](https://github.com/amittkSharma/npm-license-tracker/blob/master/docs/migration-3-to-4.md)
 
 ## Contributing
 
