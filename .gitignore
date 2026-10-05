@@ -1,15 +1,10 @@
-# Created by .ignore support plugin (hsz.mobi)
 node_modules/
-bower_components/
-coverage/
-.sass-cache/
-.idea/
-.tmp/
 dist/
-public/
-build/
-platforms/
-plugins/
+coverage/
+*.tsbuildinfo
+npm_licenses/
+verification/
+.idea/
 *.swp
 .DS_Store
 Thumbs.db

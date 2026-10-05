@@ -1,50 +1,87 @@
 {
   "name": "npm-license-tracker",
   "version": "3.0.2",
-  "description": "Module to track all npm dependencies and their corrosponding licenses.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/npm-tracker.js",
-    "release": "commit-and-tag-version"
-  },
-  "bin": {
-    "npm-tracker": "bin/npm-tracker.js"
-  },
-  "preferGlobal": true,
+  "description": "Generate a license report for every npm dependency of a project, as JSON, CSV, HTML, Markdown or JUnit. Works with npm, Yarn and pnpm.",
   "keywords": [
-    "Npm",
     "license",
-    "tracker",
+    "licenses",
+    "license-report",
+    "license-checker",
+    "license-audit",
+    "license-compliance",
+    "dependencies",
     "npm",
-    "license",
-    "OSS",
-    "crawler",
-    "license-csv",
-    "license-json",
-    "npm licenses",
-    "licenses audit",
-    "npm-license-csv",
-    "npm-license-json",
-    "npm-license-tracker",
-    "npm crawler",
-    "npm license"
+    "yarn",
+    "pnpm",
+    "junit",
+    "azure-devops",
+    "oss"
   ],
-  "author": "AMITT K SHARMA",
-  "license": "MIT",
-  "dependencies": {
-    "colors": "1.4.0",
-    "commander": "13.1.0",
-    "fs-extra": "11.3.0",
-    "json2csv": "5.0.7",
-    "license-checker": "25.0.1",
-    "read-package-json": "7.0.1"
-  },
-  "devDependencies": {
-    "commit-and-tag-version": "12.7.3"
+  "homepage": "https://github.com/amittkSharma/npm-license-tracker#readme",
+  "bugs": {
+    "url": "https://github.com/amittkSharma/npm-license-tracker/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amittkSharma/npm-license-tracker.git"
+    "url": "git+https://github.com/amittkSharma/npm-license-tracker.git"
+  },
+  "license": "MIT",
+  "author": "AMITT K SHARMA",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./src": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./src/index": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./src/index.js": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "npm-tracker": "dist/bin/npm-tracker.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "test:dist": "node --import tsx --test test/dist.smoke.ts",
+    "start": "node dist/bin/npm-tracker.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run clean && npm run build && npm test && npm run test:dist",
+    "release": "commit-and-tag-version"
+  },
+  "dependencies": {
+    "colors": "1.4.0",
+    "commander": "13.1.0",
+    "fflate": "0.8.3",
+    "fs-extra": "11.4.1",
+    "json2csv": "5.0.7",
+    "license-checker-rseidelsohn": "4.4.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/fs-extra": "11.0.4",
+    "@types/json2csv": "5.0.7",
+    "@types/node": "22.20.4",
+    "commit-and-tag-version": "12.7.3",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
   }
 }
