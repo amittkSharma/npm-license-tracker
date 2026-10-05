@@ -1,6 +1,6 @@
 {
   "name": "npm-license-tracker",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "Generate a license report for every npm dependency of a project, as JSON, CSV, HTML, Markdown or JUnit. Works with npm, Yarn and pnpm.",
   "keywords": [
     "license",
